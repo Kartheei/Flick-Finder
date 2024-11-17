@@ -1,0 +1,14 @@
+<p>popular-movies works!</p>
+
+<div class="popular-movies">
+    <h2>Popular Movies</h2>
+    <div class="movie-grid">
+        <div class="movie-card" *ngFor="let movie of popularMovies">
+            <img [src]="getMoviePoster(movie.poster_path)" alt="{{ movie.title }}" />
+            <h3>{{ movie.title }}</h3>
+            <p>{{movie.genreNames[0]}}</p>
+            <p>{{ movie.release_date | date }}</p>
+            <p>Rating: {{ movie.vote_average.toFixed(1) }}</p>
+        </div>
+    </div>
+</div>
